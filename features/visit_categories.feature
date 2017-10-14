@@ -3,12 +3,26 @@ Feature: Visit Categories Page
   In order to sort my posts
   I want to visit the categories page
 
-  Scenario: Categories page shown
-    Given I am on the categories page
-    Then I should see "Categories"
-    And I should see "Your category slug."
+Background:
+    Given the blog is set up
+    And I am logged in as an admin
 
-  Scenario: Display new categories count after adding category
-    Given two categories have been created
-    When I am on the home page
-    Then I should see "Categories: 2"
+  Scenario: Create a new category
+    Given I am on the new categories page
+    When I fill in "category_name" with "Testlol"
+    And I press "Save"
+    Then I should see "Testlol"
+
+  Scenario: Edit an existing category
+    Given I am on the new categories page
+    When I follow "Edit"
+    And fill in "category_name" with "Testlol2"
+    And I press "Save"
+    Then I should see "Testlol2"
+
+  Scenario: Edit an existing category by description
+    Given I am on the new categories page
+    When I follow "Edit"
+    And fill in "category_description" with "Testlol3"
+    And I press "Save"
+Then I should see "Testlol3"

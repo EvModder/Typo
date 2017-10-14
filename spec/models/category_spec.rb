@@ -1,5 +1,11 @@
 require 'spec_helper'
 
+# describe "Make sure Categories page exists" do
+#   it "Shows the main page for managing categories" do
+#     expect(page.body).to include("Your category slug")
+#   end
+# end
+
 describe 'Given the results of Category.find_all_with_article_counters' do
   before(:each) { @cats = Category.find_all_with_article_counters }
 

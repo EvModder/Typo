@@ -1,6 +1,10 @@
 require 'spec_helper'
 
-
+# describe "Make sure Categories page exists" do
+#   it "Shows the main page for managing categories" do
+#     expect(page.body).to include("Your category slug")
+#   end
+# end
 
 describe CategoriesController, "/index" do
   before do
