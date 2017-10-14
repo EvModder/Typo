@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+
+
 describe CategoriesController, "/index" do
   before do
     Factory(:blog)
